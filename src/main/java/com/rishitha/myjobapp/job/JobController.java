@@ -1,5 +1,6 @@
 package com.rishitha.myjobapp.job;
 
+import com.rishitha.myjobapp.company.Company;
 import com.rishitha.myjobapp.job.JobImpl.JobServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
