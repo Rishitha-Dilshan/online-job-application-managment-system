@@ -1,8 +1,16 @@
 package com.rishitha.myjobapp.job;
 
+import com.rishitha.myjobapp.company.Company;
+import jakarta.persistence.*;
+
+import java.util.List;
+
+@Entity
+@Table(name= "job_table")
 public class Job {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
@@ -11,7 +19,22 @@ public class Job {
     private String salary;
     private String location;
 
-    public Job(Long id, String title, String description, String minSalary, String maxSalary, String salary, String location) {
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+    @ManyToOne
+    private Company company; //one side
+
+
+    public Job() {
+    }
+
+    public Job(Long id, String title, String description, String minSalary, String maxSalary, String salary, String location, Company company) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -19,6 +42,7 @@ public class Job {
         this.maxSalary = maxSalary;
         this.salary = salary;
         this.location = location;
+        this.company = company;
     }
 
     public Long getId() {
