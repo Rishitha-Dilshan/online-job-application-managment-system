@@ -1,10 +1,4 @@
 package com.rishitha.myjobapp.company;
-
-
-
-import com.rishitha.myjobapp.job.Job;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 
